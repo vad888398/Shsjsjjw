@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройки</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="{{ session.get('theme', 'light') }}">
+    <h1>Настройки</h1>
+    <label for="theme">Выберите тему:</label>
+    <select id="theme" onchange="changeTheme()">
+        <option value="light">Светлая</option>
+        <option value="dark">Тёмная</option>
+    </select>
+    <a href="{{ url_for('index') }}">На главную</a>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
