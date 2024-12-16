@@ -2,24 +2,34 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная - Интернет-магазин</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Цифровые товары</title>
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
-<body class="{{ session.get('theme', 'light') }}">
+<body>
     <h1>Цифровые товары</h1>
     <div class="products">
-        {% for product in products %}
         <div class="product">
-            <img src="{{ product.image }}" alt="{{ product.name }}">
-            <h2>{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
-            <p>Цена: {{ product.price }}₽</p>
-            <button onclick="addToCart({{ product.id }})">Добавить в корзину</button>
+            <img src="https://via.placeholder.com/150" alt="Электронная книга">
+            <h2>Электронная книга</h2>
+            <p>Удобная книга в электронном формате.</p>
+            <p>Цена: 500₽</p>
+            <button onclick="addToCart('Электронная книга', 500)">Добавить в корзину</button>
         </div>
-        {% endfor %}
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Музыкальный альбом">
+            <h2>Музыкальный альбом</h2>
+            <p>Лучшие треки вашего любимого исполнителя.</p>
+            <p>Цена: 300₽</p>
+            <button onclick="addToCart('Музыкальный альбом', 300)">Добавить в корзину</button>
+        </div>
     </div>
-    <a href="{{ url_for('cart') }}">Перейти в корзину</a> |
-    <a href="{{ url_for('settings') }}">Настройки</a>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <a href="cart.html">Перейти в корзину</a> | <a href="settings.html">Настройки</a>
+
+    <script>
+        function addToCart(name, price) {
+            alert(name + " добавлен в корзину! Цена: " + price + "₽");
+        }
+    </script>
 </body>
 </html>
