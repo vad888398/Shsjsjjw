@@ -1,29 +1,26 @@
-body.light {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-body.dark {
-    background-color: #121212;
-    color: #ffffff;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
+    color: #0078D7;
 }
 
-.products, .cart-item {
+.products {
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin-top: 20px;
 }
 
-.product, .cart-item {
-    border: 1px solid #ccc;
+.product {
+    border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
-    text-align: center;
     width: 200px;
 }
 
@@ -31,7 +28,7 @@ button {
     background-color: #0078D7;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
